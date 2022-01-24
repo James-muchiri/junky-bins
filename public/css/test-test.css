@@ -1,0 +1,111 @@
+
+
+
+
+.header-juu {
+    /*margin-left: 600px;*/
+    /*float: right;*/
+ 
+    padding-top: 15px;
+   
+    padding-right: 130px;
+   
+    padding-bottom: 15px;
+padding-left: 160px;
+    background: #0f3d56;
+}
+.header-juu #strip{
+    color: #ffffff;
+
+
+    font-size: 15px;
+    font-weight: 700;
+    
+    transition: all 0.3s ease 0s;
+    padding: 0px 20px;
+    
+    
+}
+
+.header-juu #strip a:hover{
+    color: #ebac00;
+ 
+    font-size: 16px;
+    font-weight: 700;
+    
+    
+    
+}
+.header-juu #supp{
+    color: #ffffff;
+ 
+    font-size: 15px;
+    font-weight: 700;
+    
+    transition: all 0.3s ease 0s;
+    padding: 0px 20px;
+    
+    
+}
+ #strip a{
+    padding-right: 25px;
+}
+
+.fsize-decrease--btn{
+    height: 5px;
+}
+.header-juu #whatsapp{
+ 
+    background-color:0f3d56;
+  
+     border-radius: 46px;
+     padding: 5px;
+    
+}
+
+.header-juu2{
+ 
+   
+    top: -5px;
+   
+}
+.headr{
+    background: #ffffffd9;
+    align-items: center;
+    height: 80px;    
+    opacity: 100%;
+    padding-right: 230px;
+    padding-left: 170px;
+}
+
+
+
+
+
+a.menuItemBtn, button.menuItemBtn, button.call_back_btn{
+    display: inline-block;
+    font-size: 10px;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    z-index: 1;
+    -webkit-border-radius: 2px;
+    font-weight: 700;
+    padding: 15px 15px !important;
+    /*margin: 12px;*/
+    max-width: 240px;
+    line-height: 20px;
+    height: 50px;
+    background: #074578 none repeat scroll 0 0 !important;
+    color: #ffffff !important;
+    border: none;
+}
+a.menuItemBtn:hover, button.menuItemBtn:hover, button.call_back_btn:hover{
+    background: #ffffff none repeat scroll 0 0 !important;
+    color: #074578 !important;
+    border: thin solid #074578;
+}
+
+
+
+
+
