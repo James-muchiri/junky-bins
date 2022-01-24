@@ -1,14 +1,21 @@
 
+<footer class="sr-footer-wrapper sr-dark-footer">
+<div class="sr-copyright-wrapper demo-copyright-area">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+    
+    <p>Copyright © 2021<a href="#">
+        Unipro</a> All Rights Reserved.</p>
+             </div>
+    </div>
+</footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}" ></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 
-  
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    
  
     <script src="{{ asset('js/admin-min.js') }}" ></script>
     <script src="{{ asset('js/sidebar.js') }}" ></script>
+
+   
 
 
 

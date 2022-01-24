@@ -188,6 +188,9 @@ Route::get('/contact_us', function () {
 Route::get('/newlead', function () {
     return view('admin/newlead');
 });
+Route::get('/admin/FAQS', function () {
+    return view('admin/faqs');
+});
 
 Route::get('/newblog', 'AdminPostController@newblog')->name('newblog');
 Route::get('/newAdmin', 'AdminPostController@newAdmin')->name('newAdmin'); 

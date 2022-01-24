@@ -522,7 +522,7 @@
                               mobileNavTrigger.addEventListener('click', function(event){
                                 event.preventDefault();
                                 var toggle = !Util.hasClass(sidebar, 'cd-side-nav--is-visible');
-                                if(toggle) expandSidebarItem();
+                              
                                 Util.toggleClass(sidebar, 'cd-side-nav--is-visible', toggle);
                                 Util.toggleClass(mobileNavTrigger, 'cd-nav-trigger--nav-is-visible', toggle);
                               });
@@ -569,7 +569,7 @@
                                   mainHeader.appendChild(navList);
                                   mainHeader.insertBefore(searchInput, mainHeader.firstElementChild.nextSibling);
                                 }
-                                checkSelected(mq);
+                             
                                 resizing = false;
                               };
                           
@@ -587,15 +587,7 @@
                                 return window.getComputedStyle(mainHeader, '::before').getPropertyValue('content').replace(/'|"/g, "");
                               };
                           
-                              function expandSidebarItem() { // show dropdown of the selected sidebar item
-                                Util.addClass(sidebar.getElementsByClassName('cd-side__item--selected')[0], 'cd-side__item--expanded');
-                              };
-                          
-                              function checkSelected(mq) {
-                                // on desktop, remove expanded class from items (js-cd-item--has-children) that were expanded on mobile version
-                                if( mq == 'desktop' ) {
-                                  for(var i = 0; i < dropdownItems.length; i++) Util.removeClass(dropdownItems[i], 'cd-side__item--expanded');
-                                };
-                              }
+                       
+                        
                             }
                           }());
