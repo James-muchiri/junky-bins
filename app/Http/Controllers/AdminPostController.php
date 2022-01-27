@@ -7,6 +7,7 @@ use App\Adimn;
 use App\Blog;
 use App\Blog_pic;
 use App\Blog_Categories;
+use App\FAQS;
 use Illuminate\Http\Request;
 use App\Categories;
 use App\Products;
@@ -18,20 +19,6 @@ use Validator;
 class AdminPostController extends Controller
 {
     
-
-    public function newadmin()
-    {
-        $blog_cats = Blog_Categories::all();
-        $blogs = Blog::all();
- 
-        
-        return view('admin/newadmin', compact(['blogs', 'blog_cats']));
-      
-    }
-
-
-
-
     // post blogs
     public function post_blog(Request $request)
     {
@@ -51,11 +38,7 @@ class AdminPostController extends Controller
        $post_blog->bloginfo = $request->bloginfo;
        $post_blog->blog_description = $request->blog_description;
        $post_blog->header_image =  $imageName;
-        $post_blog->save(); 
-
- 
-
-     
+        $post_blog->save();      
       return view('admin.previewBlog', compact(['blog']));
     }
 
@@ -166,20 +149,25 @@ class AdminPostController extends Controller
 
     }
 
-    public function edit_product(Request $request)
+    
+    public function faqs_post(Request $request)
     {
-        $category = Products::where('id', $request->id)->first();
+       $faqs = new FAQS;
+       $faqs->question = $request->get('question');
+       $faqs->answer = $request->get('answer');
+        $faqs->save();
 
-        $category->name=$request->name;
-        $category->description=$request->description;
-        $category->price=$request->price;
-        $category->original_price=$request->original_price;
+        return response('Faqs saved', 200);
+    }
 
-        $category->save();
+    public function faqs_update(Request $request)
+    {
+       $faqs = FAQS::find($request->get('id'));
+       $faqs->question = $request->get('question');
+       $faqs->answer = $request->get('answer');
+        $faqs->save();
 
-             return redirect('/products');
-
-
+        return response('Faqs Updated', 200);
     }
 
 

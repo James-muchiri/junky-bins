@@ -117,25 +117,7 @@ jQuery(document).ready(function($) {
 
                       
 
-                        $('#new_category').on('submit', function(e) {
-                            e.preventDefault(); 
-                            var name = $('#name').val();
-                            var cat_description = $('#cat_description').val();
-                            var _token = $('#_token').val();
-                            $.ajax({
-                                type: "POST",
-                                url: '/admin/new_category',
-                                data: {
-                                    name:name,
-                                    cat_description:cat_description,
-                                    _token: _token
-                                    },
-                                success: function( msg ) {
-                                    alert( msg );
-                                }
-                            });
-                        });
-                 
+                
 
                         ////////////////////////////test
 
@@ -315,4 +297,21 @@ tinymce.init({
     
   }); 
 
-  
+  ////////////////////////// 
+
+  $('[data-search]').on('keyup', function() {
+	var searchVal = $(this).val();
+	var filterItems = $('[data-filter-item]');
+
+	if ( searchVal != '' ) {
+		filterItems.addClass('hidden');
+		$('[data-filter-item][data-filter-name*="' + searchVal.toLowerCase() + '"]').removeClass('hidden');
+	} else {
+		filterItems.removeClass('hidden');
+	}
+});
+
+
+
+
+    //// view faqs tabs

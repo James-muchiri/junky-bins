@@ -1,107 +1,117 @@
 
 
-$(function() {
-    "use strict";
+//// faqs submit
 
-	//Loader
-	$(function preloaderLoad() {
-        if($('.preloader').length){
-            $('.preloader').delay(200).fadeOut(300);
-        }
-        $(".preloader_disabler").on('click', function() {
-            $("#preloader").hide();
+
+function faqsubmit() {
+    console.log("save");
+
+    var question = document.getElementById('question').value;
+    
+        var answer = document.getElementById('answer').value;
+        var _token = document.getElementById('_token').value;
+    
+        var formdata = 'question=' + question + '&answer=' + answer + '&_token=' + _token;
+        // validate the form input
+        console.log(formdata);
+       
+    
+    // AJAX code to submit form.
+    $.ajax({
+             type: "POST",
+             url: "/admin/faqs_post", //call  to store form data
+             data: formdata,
+             cache: false,
+             success: function(data) {
+                 console.log(data);  
+                 
+          
+            
+             
+          
+                    document.getElementById("faqs_saved").style.display = "block"; 
+                    $("#faqs_message").html(data);
+                        
+             },
+    
         });
+    };
+
+//get faqs by id
+
+function getfaqs(id){
+    console.log("fetch data");
+
+    var dataId = id;
+    // console.log(dataId);
+
+    $.ajax({
+    type: 'get',
+    data:  dataId,
+    url: '/admin/getfaqs/'+dataId,
+    dataType: 'json',
+	cache: false,
+    success:
+        function( data ){
+         console.log(data);
+		 $(".editfaqs").html("");
+         var t_data="";
+		 t_data=t_data+
+		 '<div class="form-group">'+
+		 '<label for="question" class="col-form-label">Question:</label>'+
+		 '<input type="text" class="form-control"  id="edit_question" value="'+ data.question+'" required>'+
+		 '<input type="text" class="form-control"  id="id" value="' + data.id+'" hidden>'+
+	   '</div>'+
+	   '<div class="form-group">'+
+	   '<label class="col-form-label" for="">Answer</label>'+
+	   '<textarea class="form-control" id="edit_answer" maxlength="200" rows="5">'+ data.answer+'</textarea>'+
+	'<span class="pull-right label label-default" id="count_message"></span>'+
+	  '</div>';
+	  $(".editfaqs").append(t_data);
+
+
+        
+
+        }
     });
-});
-
-
-setTimeout(function() {
-
-    // Do something after 3 seconds
-    // This can be direct code, or call to some other function
-
-  $('#alert').hide();
-
-   }, 3000);
-
-
-   $.noConflict();
-
-jQuery(document).ready(function($) {
+};
 
 
 
 
-	// Counter Number
-	$('.count').each(function () {
-		$(this).prop('Counter',0).animate({
-			Counter: $(this).text()
-		}, {
-			duration: 3000,
-			easing: 'swing',
-			step: function (now) {
-				$(this).text(Math.ceil(now));
-			}
-		});
-	});
+//// faqs update
 
 
+function faqupdate() {
+    console.log("save");
 
-
-	// Menu Trigger
-	$('#menuToggle').on('click', function(event) {
-		var windowWidth = $(window).width();
-		if (windowWidth<1010) {
-			$('body').removeClass('open');
-			if (windowWidth<760){
-				$('#left-panel').slideToggle();
-			} else {
-				$('#left-panel').toggleClass('open-menu');
-			}
-		} else {
-			$('body').toggleClass('open');
-			$('#left-panel').removeClass('open-menu');
-		}
-
-	});
-
-
-	$(".menu-item-has-children.dropdown").each(function() {
-		$(this).on('click', function() {
-			var $temp_text = $(this).children('.dropdown-toggle').html();
-			$(this).children('.sub-menu').prepend('<li class="subtitle">' + $temp_text + '</li>');
-		});
-	});
-
-
-	// Load Resize
-	$(window).on("load resize", function(event) {
-		var windowWidth = $(window).width();
-		if (windowWidth<1010) {
-			$('body').addClass('small-device');
-		} else {
-			$('body').removeClass('small-device');
-		}
-
-	});
-
-
-});
-
-
-$(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#myTable tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
-    });
-  });
-
-
-
-  $(document).ready(function() {
-$('#modal_table').DataTable( {
-"pagingType": "full_numbers"
-} );
-} );
+    var question = document.getElementById('edit_question').value;    
+        var answer = document.getElementById('edit_answer').value;
+		var id = document.getElementById('id').value;
+        var _token = document.getElementById('_token').value;
+    
+        var formdata = 'question=' + question + '&answer=' + answer + '&id=' + id + '&_token=' + _token;
+        // validate the form input
+        console.log(formdata);
+       
+    
+    // AJAX code to submit form.
+    $.ajax({
+             type: "POST",
+             url: "/admin/faqs_update", //call  to store form data
+             data: formdata,
+             cache: false,
+             success: function(data) {
+                 console.log(data);  
+                 
+          
+            
+             
+          
+                    document.getElementById("faqs_saved").style.display = "block"; 
+                    $("#faqs_message").html(data);
+                        
+             },
+    
+        });
+    };

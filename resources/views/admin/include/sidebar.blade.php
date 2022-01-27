@@ -37,11 +37,9 @@
       <li>
         <a href="#faqsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fa fa-gears">&nbsp;&nbsp;</i> Manage FAQS &nbsp;&nbsp;&nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
         <ul class="collapse list-unstyled" id="faqsmenu">
+           
             <li>
-                <a href="/newfaqs"><i class="fa fa-gears"></i> New Faqs</a>
-            </li>
-            <li>
-                <a href="/allfaqs"><i class="fa fa-gears"></i>All Faqs</a>
+                <a href="/admin/FAQS"><i class="fa fa-gears"></i>&nbsp;&nbsp;FAQS</a>
             </li>
            
           
@@ -71,30 +69,7 @@
   </li>
 
     
-  
-      <li class="cd-side__item cd-side__item--has-children cd-side__item--comments js-cd-item--has-children">
-        <a href="#0">Manage Blogs</a>
-        
-        <ul class="cd-side__sub-list">
 
-          <li class="cd-side__sub-item">
-            <a href="/newblog"><i class="fa fa-gears"></i>&nbsp;&nbsp; New Blog</a>
-        </li>
-        <li class="cd-side__sub-item">
-            <a href="/allblogs"><i class="fa fa-gears"></i> &nbsp;&nbsp;All Blogs</a>
-        </li>
-        <li class="cd-side__sub-item">
-            <a href="ui-badges.html"><i class="fa fa-gears"></i> &nbsp;&nbsp;Comments</a>
-        </li>
-        <li class="cd-side__sub-item">
-            <a href="/blogcats"><i class="fa fa-gears"></i>&nbsp;&nbsp;Blog Categories</a>
-        </li>
-        <li class="cd-side__sub-item">
-            <a href="/allblogs"><i class="fa fa-gears"></i>&nbsp;&nbsp;All Blogs</a>
-        </li>
-          
-        </ul>
-      </li>
        
       <li>
         <a href="#blogsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fa fa-gears">&nbsp;&nbsp;</i> Manage Blogs &nbsp;&nbsp;&nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>

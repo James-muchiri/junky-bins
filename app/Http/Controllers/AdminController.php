@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 use Hash;
 use File;
+use App\Blog;
+use App\Blog_pic;
+use App\Blog_Categories;
 use App\Adimn;
 use Illuminate\Http\Request;
 use App\Categories;
 use App\Products;
 use App\Orders;
+use App\FAQS;
 use Redirect;
 use Session;
 use Symfony\Component\Console\Helper\Table;
@@ -16,84 +20,37 @@ class AdminController extends Controller
 {
     //
 
-public function admin(){
 
-    $posts = Products::all();
-    $order = Orders::all();
-    $complete=  Orders::where('delivery_status', 'yes')->get();
-    $pending_delivery=  Orders::where('delivery_status', 'no')->where('status', 'approved')->get();
-
-    $pend=  Orders::where('status', 'pending')->get();
-    $post = $posts->count();
-    $orders = $order->count();
-    $delivery = $pending_delivery->count();
-    $completed = $complete->count();
-    $pending = $pend->count();
-    return view('admin.index', compact(['post','orders', 'completed', 'pending','delivery']));
-
-
-}
-    public function category()
+    public function admin()
     {
-        $categories = Categories::all();
-        return view('admin.newcategory', compact(['categories' ]));
-
-
+        $blog_cats = Blog_Categories::all();
+        $blogs = Blog::all();
+ 
+        
+        return view('admin/index', compact(['blogs', 'blog_cats']));
+      
     }
 
-    public function managecategory()
+    public function FAQS()
     {
-        $categories = Categories::all();
-        return view('admin.managecategories', compact(['categories' ]));
+        $faqs = FAQS::all();
+        return view('admin.faqs', compact(['faqs' ]));
+         }
 
 
-    }
+    public function getfaqs($dataId)
+         {
+             $faqbyid= FAQS::find($dataId);
+           
+             return response()->json($faqbyid);
+          
+     
+     
+         }
 
-    public function manageproducts()
-    {
-        $categories = Categories::all();
-        return view('admin.recipt', compact(['categories' ]));
+     
 
-
-    }
-     public function show_cartegories($dataID)
-    {
-        $category = Categories::where('id', $dataID)->first();
-
-        $category->is_hidden='no';
-
-        $category->save();
-        Session::flash('show.hide', "Category will be seen by user");
-        return redirect('/categories');
-
-
-    }
-
-    public function hide_cartegories($dataID)
-    {
-        $category = Categories::where('id', $dataID)->first();
-
-        $category->is_hidden='yes';
-
-        $category->save();
-        Session::flash('show.hide', "Category will not be seen by user");
-             return redirect('/categories');
-
-
-    }
-
-    public function edit_category(Request $request)
-    {
-        $category = Categories::where('id', $request->id)->first();
-
-        $category->name=$request->name;
-
-        $category->save();
-
-             return redirect('/categories');
-
-
-    }
+    
 
     public function edit_product(Request $request)
     {
