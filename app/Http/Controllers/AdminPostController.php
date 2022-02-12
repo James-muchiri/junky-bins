@@ -8,6 +8,7 @@ use App\Blog;
 use App\Blog_pic;
 use App\Blog_Categories;
 use App\FAQS;
+use App\Blog_comments;
 use Illuminate\Http\Request;
 use App\Categories;
 use App\Products;
@@ -24,11 +25,13 @@ class AdminPostController extends Controller
     {
         $post_blog_id = uniqid();
         session()->put('blogid', $post_blog_id );
-        $blog = $request;
+     
 
         $file = $request->file('header_image');  
         $imageName = $file->getClientOriginalName();
         $file->move(public_path('blogtest'), $imageName);  
+
+        $blog_cats = serialize($request->blog_cats);
 
         $post_blog = new Blog;
         $post_blog->post_blog_id =$post_blog_id;
@@ -38,7 +41,9 @@ class AdminPostController extends Controller
        $post_blog->bloginfo = $request->bloginfo;
        $post_blog->blog_description = $request->blog_description;
        $post_blog->header_image =  $imageName;
-        $post_blog->save();      
+       $post_blog->blog_cats =  $blog_cats;
+        $post_blog->save();   
+        $blog =  $post_blog; 
       return view('admin.previewBlog', compact(['blog']));
     }
 
@@ -153,7 +158,8 @@ class AdminPostController extends Controller
     public function faqs_post(Request $request)
     {
        $faqs = new FAQS;
-       $faqs->question = $request->get('question');
+       $faqs->question = $request->get('question');       
+       $faqs->faqs_group= $request->get('faqs_group');
        $faqs->answer = $request->get('answer');
         $faqs->save();
 

@@ -24,7 +24,19 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12"  style="margin-top: 10px; margin-bottom:10px;">
-                          
+                                    <div class="single_widgets widget_tags">
+                                        <h4 class="title" style="padding-bottom: 30px;">Tags Cloud</h4>
+                                        <ul>
+                                            @php
+                                                
+                                                $blog_cat = unserialize($blog['blog_cats']);
+                                            @endphp
+                                         @foreach ($blog_cat as $blog_ct )
+                                         <li><a href="#">{{$blog_ct}}</a></li>
+                                         @endforeach                                          
+                                           
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

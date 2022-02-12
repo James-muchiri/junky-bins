@@ -60,7 +60,7 @@
                                                     <div data-toggle="buttons" class="btn-group bizmoduleselect">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input class="d-none" type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                                <input class="d-none" type="checkbox" name="blog_cats[]" autocomplete="off" value="{{$blog_cat['name']}}">
                                                                
                                                                 <h5>{{$blog_cat['name']}}</h5>
                                                             </div>

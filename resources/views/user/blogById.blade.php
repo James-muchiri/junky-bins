@@ -21,7 +21,7 @@
                 <div class="post-meta-wrapper" >
                     <div class="post-meta">
                         <div class="post-author-avatar border-rounded">
-                            <img src="{{ asset('blogtest') }}/{{$blog['header_image']}}" class="bloger-image" alt="Author Images">
+                            <img src="{{ asset('images/12/planet-earth.png') }}" class="bloger-image" alt="Author Images">
                         </div>
                         <div class="content">
                             <h6 class="post-author-name">
@@ -61,76 +61,37 @@
                        
 
                 
-                            <p>For more information on the apps and games, visit the <a href="#">App Store</a>.</p>
+                            <p>For more information about the blog.</p>
 
                             <div class="tagcloud">
-                                <a href="#">Design</a>
-                                <a href="#">Life Style</a>
-                                <a href="#">Web Design</a>
-                                <a href="#">Development</a>
-                                <a href="#">Design</a>
-                                <a href="#">Life Style</a>
+                                @php
+                                                
+                                $blog_cat = unserialize($blog['blog_cats']);
+                            @endphp
+                         @foreach ($blog_cat as $blog_ct )
+                      <a href="#">{{$blog_ct}}</a>
+                         @endforeach  
+                                
                             </div>
 
                             <div class="social-share-block">
                                 <div class="post-like">
-                                    <a href="#"><i class="fal fa-thumbs-up"></i><span>2.2k Like</span></a>
+                                 
+                                    <a href="#" style="float: right;"><i class="fal fa-thumbs-up"></i><span>2.2k Likes</span></a>
+                                    <a type="button" id="like-button">
+                                        <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M91.6 13A28.7 28.7 0 0 0 51 13l-1 1-1-1A28.7 28.7 0 0 0 8.4 53.8l1 1L50 95.3l40.5-40.6 1-1a28.6 28.6 0 0 0 0-40.6z"/></svg>
+                                          Like
+                                        </a>
                                 </div>
                                 <ul class="social-icon icon-rounded-transparent md-size">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 </ul>
                             </div>
 
-                            <!-- Start Author  -->
-                            <div class="about-author">
-                                <div class="media">
-                                    <div class="thumbnail">
-                                        <a href="#">
-                                            <img src="{{ asset('images/logo/logo1.jpeg') }}" class="user-image" alt="Author Images">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="author-info">
-                                            <h5 class="title">
-                                                <a class="hover-flip-item-wrapper" href="#">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Rahabi Ahmed Khan">Rahabi Ahmed Khan</span>
-                                                    </span>
-                                                </a>
-                                            </h5>
-                                            <span class="b3 subtitle">Sr. UX Designer</span>
-                                        </div>
-                                        <div class="content">
-                                            <p class="b1 description">At 29 years old, my favorite compliment is being
-                                                told that I look like my mom. Seeing myself in her image, like this
-                                                daughter up top, makes me so proud of how far I’ve come, and so thankful
-                                                for where I come from.</p>
-                                            <ul class="social-share-transparent size-md">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="far fa-envelope"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Author  -->
-
-                            <!-- Start Comment Form Area  -->
-                            <div class="axil-comment-area">
-                                <div class="axil-total-comment-post">
-                                    <div class="title">
-                                        <h4 class="mb--0">30+ Comments</h4>
-                                    </div>
-                                    <div class="add-comment-button cerchio">
-                                        <a class="axil-button button-rounded" href="post-details.html" tabindex="0"><span>Add Your Comment</span></a>
-                                    </div>
-                                </div>
+                          
 
                                 <!-- Start Comment Respond  -->
                                 <div class="comment-respond">
@@ -143,65 +104,81 @@
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label>Your Name</label>
-                                                    <input id="name" type="text">
+                                                    <input id="coment_name" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label>Your Email</label>
-                                                    <input id="email" type="email">
+                                                    <input id="coment_email" type="email">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label>Your Website</label>
-                                                    <input id="website" type="text">
+                                                    <input id="coment_website" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label>Leave a Reply</label>
-                                                    <textarea name="message"></textarea>
+                                                    <textarea id="coment_message"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <p class="comment-form-cookies-consent">
-                                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+                                                    <input id="coment_remember" name="wp-comment-cookies-consent" type="checkbox" value="yes">
                                                     <label for="wp-comment-cookies-consent">Save my name, email, and
                                                         website in this browser for the next time I comment.</label>
                                                 </p>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-submit cerchio">
-                                                    <input name="submit" type="submit" id="submit" class="axil-button button-rounded" value="Post Comment">
+                                                    <input type="text" id="blog_id" value="{{$blog['id']}}" hidden>
+                                                    <input type="hidden" id="_token" value="{{ csrf_token() }}">
+                                                    <a type="submit" id="submit" onclick="postcomment()" class="btn button-rounded comment-btn">Post Comment</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <!-- End Comment Respond  -->
-
+                                @php
+                                $blog_comment_count = $blog_comments->count();
+                                     
+                                 @endphp
+                                <!-- Start Comment Form Area  -->
+                         
+                                    <div class="axil-total-comment-post">
+                                        <div class="title">
+                                            <h4 class="mb--0">{{$blog_comment_count}} Comments</h4>
+                                        </div>
+                                       
+                                    </div>
                                 <!-- Start Comment Area  -->
+                            
                                 <div class="axil-comment-area">
-                                    <h4 class="title">2 comments</h4>
-                                    <ul class="comment-list">
+                                   <ul class="comment-list">
+                                        @if ($blog_comments->count() > 0)                                           
+                                     
+                                        @foreach ($blog_comments as $blog_comment )
                                         <!-- Start Single Comment  -->
                                         <li class="comment">
                                             <div class="comment-body">
                                                 <div class="single-comment">
                                                     <div class="comment-img">
-                                                        <img src="assets/images/post-images/author/author-b2.png" alt="Author Images">
+                                                        <img src="{{ asset('images/12/planet-earth.png') }}" class="bloger-image" alt="Author Images">
                                                     </div>
                                                     <div class="comment-inner">
                                                         <h6 class="commenter">
                                                             <a class="hover-flip-item-wrapper" href="#">
                                                                 <span class="hover-flip-item">
-                                                                    <span data-text="Cameron Williamson">Cameron Williamson</span>
+                                                                    <span data-text="{{$blog_comment->name}}">{{$blog_comment->name}}</span>
                                                                 </span>
                                                             </a>
                                                         </h6>
                                                         <div class="comment-meta">
-                                                            <div class="time-spent">Nov 23, 2018 at 12:23 pm</div>
+                                                            <div class="time-spent">{{$blog_comment->created_at}}</div>
                                                             <div class="reply-edit">
                                                                 <div class="reply">
                                                                     <a class="comment-reply-link hover-flip-item-wrapper" href="#">
@@ -213,34 +190,40 @@
                                                             </div>
                                                         </div>
                                                         <div class="comment-text">
-                                                            <p class="b2">Duis hendrerit velit scelerisque felis tempus, id porta
-                                                                libero venenatis. Nulla facilisi. Phasellus viverra
-                                                                magna commodo dui lacinia tempus. Donec malesuada nunc
-                                                                non dui posuere, fringilla vestibulum urna mollis.
-                                                                Integer condimentum ac sapien quis maximus. </p>
+                                                            <p class="b2">{{$blog_comment->message}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            @php
+                                            $blog_comments_replies = \App\Blog_comments_reply::where(['comment_id' => $blog_comment->id])->get();
+                                            $blog_comments_replies = $blog_comments_replies->sortByDesc('created_at');
+                                       
+                                            @endphp
+                                            @if ($blog_comments_replies->count() > 0)
+                                                
+                                           
+                                            @foreach ($blog_comments_replies as $blog_comments_reply)
+                                        
                                             <ul class="children">
                                                 <!-- Start Single Comment  -->
                                                 <li class="comment">
                                                     <div class="comment-body">
                                                         <div class="single-comment">
                                                             <div class="comment-img">
-                                                                <img src="assets/images/post-images/author/author-b3.png" alt="Author Images">
+                                                                <img src="{{ asset('images/12/planet-earth.png') }}" class="bloger-image" alt="Author Images">
                                                             </div>
                                                             <div class="comment-inner">
                                                                 <h6 class="commenter">
                                                                     <a class="hover-flip-item-wrapper" href="#">
                                                                         <span class="hover-flip-item">
-                                                                            <span data-text="Rahabi Khan">Rahabi Khan</span>
+                                                                            <span data-text="{{$blog_comments_reply->name}}">{{$blog_comments_reply->name}}</span>
                                                                         </span>
                                                                     </a>
                                                                 </h6>
                                                                 <div class="comment-meta">
-                                                                    <div class="time-spent">Nov 23, 2018 at 12:23 pm
-                                                                    </div>
+                                                                    <div class="time-spent">{{$blog_comments_reply->created_at}}</div>
+                                                                   
                                                                     <div class="reply-edit">
                                                                         <div class="reply">
                                                                             <a class="comment-reply-link hover-flip-item-wrapper" href="#">
@@ -252,56 +235,24 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="comment-text">
-                                                                    <p class="b2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse lobortis cursus lacinia. Vestibulum vitae leo id diam pellentesque ornare.</p>
+                                                                 <p class="b2">{{$blog_comments_reply->message}} </p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <!-- End Single Comment  -->
-                                            </ul>
+                                            </ul> 
+                                            @endforeach
+                                            @endif
                                         </li>
-                                        <!-- End Single Comment  -->
-
-                                        <!-- Start Single Comment  -->
-                                        <li class="comment">
-                                            <div class="comment-body">
-                                                <div class="single-comment">
-                                                    <div class="comment-img">
-                                                        <img src="assets/images/post-images/author/author-b2.png" alt="Author Images">
-                                                    </div>
-                                                    <div class="comment-inner">
-                                                        <h6 class="commenter">
-                                                            <a class="hover-flip-item-wrapper" href="#">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="Rahabi Khan">Rahabi Khan</span>
-                                                                </span>
-                                                            </a>
-                                                        </h6>
-                                                        <div class="comment-meta">
-                                                            <div class="time-spent">Nov 23, 2018 at 12:23 pm</div>
-                                                            <div class="reply-edit">
-                                                                <div class="reply">
-                                                                    <a class="comment-reply-link hover-flip-item-wrapper" href="#">
-                                                                        <span class="hover-flip-item">
-                                                                            <span data-text="Reply">Reply</span>
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="comment-text">
-                                                            <p class="b2">Duis hendrerit velit scelerisque felis tempus, id porta
-                                                                libero venenatis. Nulla facilisi. Phasellus viverra
-                                                                magna commodo dui lacinia tempus. Donec malesuada nunc
-                                                                non dui posuere, fringilla vestibulum urna mollis.
-                                                                Integer condimentum ac sapien quis maximus. </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- End Single Comment  -->
+                                        <!-- End Single Comment  --> 
+                                        @endforeach
+                                        @else
+                                            <p> no comments yet </p>
+                                        @endif
+                                       
+                                       
                                     </ul>
                                 </div>
                                 <!-- End Comment Area  -->
@@ -310,7 +261,6 @@
                             <!-- End Comment Form Area  -->
 
 
-                        </div>
                     </div>
                     <div class="col-lg-4">
                         <!-- Start Sidebar Area  -->
@@ -733,6 +683,65 @@ $('nav.mainmenu__nav').meanmenu({
     meanMenuContainer: '.mobile-menu',
     onePage: true
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var likeButton = document.getElementById('like-button');
+  likeButton.addEventListener('click', function() {
+    window.lb = likeButton;
+    likeButton.classList.toggle('selected');
+  });
+}, false);
+
+
+
+//// faqs update
+
+
+function postcomment() {
+    console.log("save");
+
+    var name = document.getElementById('coment_name').value;    
+        var email = document.getElementById('coment_email').value;
+		var website = document.getElementById('coment_website').value;
+        var message = document.getElementById('coment_message').value;
+        var blog_id = document.getElementById('blog_id').value;
+        var _token = document.getElementById('_token').value;
+    
+    
+
+
+
+       
+    
+    // AJAX code to submit form.
+    $.ajax({
+             type: "POST",
+             url: "/postcomment", //call  to store form data
+             data:  {
+        name:name,
+        email:website,
+        website:website,
+        message: message,
+        blog_id: blog_id,
+        _token: _token,
+        },
+             cache: false,
+             success: function(data) {
+                 console.log(data);  
+                 
+          
+            
+             
+          
+                    document.getElementById("faqs_update").style.display = "block"; 
+                    $("#faqs_update_message").html(data);
+                        
+             },
+    
+        });
+    };
+
 
 </script>
 @include("user.includes.footer")

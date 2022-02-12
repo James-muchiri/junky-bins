@@ -32,22 +32,20 @@
 
   
     <div class="panel-group" id="accordion">
-      @foreach ( $faqs as $faq)
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-            {{$faq->question}}
+            How do I dispose of hazardous materials?
           </a>
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in">
         <div class="panel-body">
-          {{$faq->answer}}
+            To check the availability of these services in your area, enter your zip code in the residential service finder.
         </div>
       </div>
     </div>
-    @endforeach
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">

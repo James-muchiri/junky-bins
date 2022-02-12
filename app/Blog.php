@@ -9,6 +9,6 @@ class Blog extends Model
     //
 
     protected $fillable = [
-        'email', 'authorname', 'blog', 'bloginfo', 'post_blog_id'
+        'email', 'authorname', 'blog', 'bloginfo', 'post_blog_id', 'blog_cats'
     ];
 }

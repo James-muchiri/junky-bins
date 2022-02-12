@@ -7,11 +7,11 @@ function faqsubmit() {
     console.log("save");
 
     var question = document.getElementById('question').value;
-    
+        var  faqs_group = $(".faqs_group:checked").val();
         var answer = document.getElementById('answer').value;
         var _token = document.getElementById('_token').value;
     
-        var formdata = 'question=' + question + '&answer=' + answer + '&_token=' + _token;
+        var formdata = 'question=' + question + '&faqs_group=' + faqs_group + '&answer=' + answer + '&_token=' + _token;
         // validate the form input
         console.log(formdata);
        
@@ -108,10 +108,109 @@ function faqupdate() {
             
              
           
-                    document.getElementById("faqs_saved").style.display = "block"; 
-                    $("#faqs_message").html(data);
+                    document.getElementById("faqs_update").style.display = "block"; 
+                    $("#faqs_update_message").html(data);
                         
              },
     
         });
     };
+
+    //get faqs by id
+
+function deletefaqs(id){
+    console.log("fetch data");
+
+    var dataId = id;
+    // console.log(dataId);
+
+    $.ajax({
+    type: 'get',
+    data:  dataId,
+    url: '/admin/deletefaqs/'+dataId,
+    dataType: 'json',
+	cache: false,
+    success:
+        function( data ){
+         console.log(data);        
+
+        }
+    });
+};
+
+
+function hidefaqs(id){
+    console.log("fetch data");
+
+    var dataId = id;
+    // console.log(dataId);
+
+    $.ajax({
+    type: 'get',
+    data:  dataId,
+    url: '/admin/hidefaqs/'+dataId,
+    dataType: 'json',
+	cache: false,
+    success:
+        function( data ){
+         console.log(data.success);        
+         toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          };
+ 
+         toastr["success"]("success", data.success);
+   
+        }
+    });
+};
+function showfaqs(id){
+    console.log("fetch data");
+
+    var dataId = id;
+    // console.log(dataId);
+
+    $.ajax({
+    type: 'get',
+    data:  dataId,
+    url: '/admin/showfaqs/'+dataId,
+    dataType: 'json',
+	cache: false,
+    success:
+        function( data ){
+            console.log(data.success);        
+            toastr.options = {
+               "closeButton": true,
+               "debug": false,
+               "newestOnTop": false,
+               "progressBar": true,
+               "positionClass": "toast-top-right",
+               "preventDuplicates": false,
+               "onclick": null,
+               "showDuration": "300",
+               "hideDuration": "1000",
+               "timeOut": "5000",
+               "extendedTimeOut": "1000",
+               "showEasing": "swing",
+               "hideEasing": "linear",
+               "showMethod": "fadeIn",
+               "hideMethod": "fadeOut"
+             };
+    
+            toastr["success"]("success", data.success);
+        }
+    });
+};

@@ -981,13 +981,7 @@ margin-right: 20px;
 .breadcrumbs-wrap {
     margin-bottom: 4rem;
 }
-.breadcrumb {
-    padding: 0;
-    margin-bottom: 0.5rem;
-    list-style: none;
-    background-color: transparent;
-    border-radius: 0;
-}
+
 .page-title .breadcrumb-item.active, .page-title .breadcrumb-item a {
     color: #ffffff;
 }
@@ -1498,9 +1492,9 @@ a.menuItemBtn:hover, button.menuItemBtn:hover, button.call_back_btn:hover{
 .sr-btn:hover,
 .sr-btn:focus {
     transition: box-shadow 0.5s;
-    -webkit-box-shadow: inset 0 0 0 2em var(--black);
-    -moz-box-shadow: inset 0 0 0 2em var(--black);
-    box-shadow: inset 0 0 0 2em var(--black);
+    -webkit-box-shadow: inset 0 0 0 2em #e0752d;
+    -moz-box-shadow: inset 0 0 0 2em #e0752d;
+    box-shadow: inset 0 0 0 2em #e0752d;
 }
 
 .sr-btn:hover,
@@ -2778,7 +2772,7 @@ img {vertical-align: middle;}
 
 
   .products-slick-nav .slick-prev, .products-slick-nav .slick-next {
-    position: static;
+  
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -2805,8 +2799,8 @@ img {vertical-align: middle;}
   }
 
   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
-    background-color: #fafafa;
-    border-color: #3a3848;
+    background-color: #4e8d16;
+    border: 3px solid #3a3848;
   }
 
   .slick-prev:before, .slick-next:before {
@@ -2941,10 +2935,7 @@ padding-bottom: 20px;
             background: #FFFFFF;
         }
 
-        p.has-medium-font-size {
-            font-size: 24px;
-            line-height: 36px;
-        }
+     
         figure {
             margin-bottom: 60px;
             position: relative;
@@ -2963,13 +2954,7 @@ padding-bottom: 20px;
             border-radius: var(--radius);
         }
     
-        p {
-            font-size: var(--font-size-b1);
-            line-height: var(--line-height-b1);
-            font-weight: var(--p-regular);
-            color: var(--color-body);
-            margin: 0 0 40px;
-        }
+     
         blockquote {
             margin-bottom: 60px;
             margin-top: 60px;
@@ -3037,16 +3022,7 @@ padding-bottom: 20px;
     padding-bottom: 20px;
 }
 
-ul.social-icon {
-    margin: -5px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
+
 ul.social-icon li {
     margin: 5px;
 }
@@ -3064,11 +3040,7 @@ ul.social-icon.icon-rounded-transparent li a {
     border: 1px solid var(--color-lighter);
 }
 
-ul.social-icon.md-size li a {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-}
+
 ul.social-icon li a {
     width: 50px;
     height: 50px;
@@ -3427,6 +3399,7 @@ input[type="submit"] {
 Social Share Styles
 ---------------------------*/
 ul.social-icon {
+  list-style: none;
     margin: -5px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -3436,6 +3409,19 @@ ul.social-icon {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
   }
+  ul li {
+    font-size: var(--font-size-b1);
+    line-height: var(--line-height-b1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--color-body);
+}
+
+ul {
+    margin: 0 0 0;
+    list-style: none;
+    padding: 0;
+}
   
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     ul.social-icon {
@@ -3881,10 +3867,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height: 1.4074;
     color: var(--color-heading);
 }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, address, p, pre, blockquote, menu, ol, ul, table, hr {
-    margin: 0;
-    margin-bottom: 20px;
-}
+
 
 
 .hover-flip-item-wrapper {
@@ -4658,12 +4641,12 @@ display: block;
       margin-top: 20px;
   }
   .faqs .service {
-    border: thin solid #868e96;
+
     border-radius: 10px;
 }
 
 .service {
-    background: #fff none repeat scroll 0 0;
+    background: #dcd7d7 none repeat scroll 0 0;
     /* border-radius: 10px; */
     box-shadow: 0 0 15px rgb(19 68 165 / 10%);
     padding: 46px 38px;
@@ -4711,4 +4694,126 @@ display: block;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
   box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+
+#like-button {
+  color: #888;
+
+  font-family: "Heebo", sans-serif;
+  background-color: transparent;
+  border: 0.1em solid;
+  border-radius: 1em;
+  padding: 0.333em 1em 0.25em;
+  line-height: 1.2em;
+  box-shadow: 0 0.25em 1em -0.25em;
+  cursor: pointer;
+  transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  outline: 0;
+
+}
+#like-button:hover {
+  color: indianred;
+}
+#like-button:active {
+  transform: scale(0.95);
+}
+#like-button.selected {
+  color: #fff;
+  background-color: indianred;
+  border-color: indianred;
+}
+#like-button .heart-icon {
+  display: inline-block;
+  fill: currentColor;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.2em;
+}
+
+.comment-btn{
+  width: auto;
+ 
+  border-radius: 500px;
+
+  font-weight: 500;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  height: 60px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: var(--p-medium);
+  font-size: var(--font-size-b2);
+  line-height: var(--line-height-b3);
+  height: 50px;
+  border: 2px solid var(--color-primary);
+display: inline-block;
+padding: 10px 30px;
+
+
+}
+
+.uk-search-default {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+}
+.uk-search-default .uk-search-icon {
+  width: 40px;
+}
+
+.uk-search .uk-search-icon-flip {
+  right: 0;
+  left: auto;
+}
+.uk-search .uk-search-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #acafb3;
+}
+.uk-icon {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  padding: 0;
+  background-color: transparent;
+  display: inline-block;
+  fill: currentcolor;
+  line-height: 0;
+}
+.uk-link {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.uk-form-large:not(textarea):not([multiple]):not([size]) {
+  height: 55px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.uk-search-default .uk-search-icon-flip ~ .uk-search-input {
+  padding-right: 40px;
+}
+.uk-search-default .uk-search-input {
+  height: 40px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
 }

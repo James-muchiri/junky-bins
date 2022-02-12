@@ -70,7 +70,7 @@
 <li id="menu-item-312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-312"><a href="/history">Company History</a></li>
 <li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a href="/contact_us">Contact With Us</a></li>
 <li id="menu-item-315" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-315"><a href="/blogs">Latest News &amp; Blog</a></li>
-<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314"><a href="/FAQS">FAQS</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314"><a href="/FAQs">FAQS</a></li>
 <li id="menu-item-316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316"><a href="/coming-soon">Meet Team Member</a></li>
 </ul></div>        </div>
             </div>

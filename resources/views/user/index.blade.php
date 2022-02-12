@@ -466,7 +466,7 @@
                     <div class="row">
                         <div class="col-sm-9 text-center">
                             <div class="sr-btn-wrap">
-                                <a href="http://kamleshyadav.com/wp/sunrays/home-one/services/" class="sr-btn sr-lg-btn">
+                                <a href="blogs/" class="sr-btn sr-lg-btn">
                                     View All Blogs						</a>
                             </div>
                         </div>
@@ -502,17 +502,16 @@
                     <div class="row">
                         <div class="products-slick" data-nav="#slick-nav-1">
                             <!-- product -->
-                            @foreach ( $blogs as $blog)
+                            @foreach ( $faqs as $faq)
                             <div class="faqs">
 
                                 <div class="faqs-body">
-                                    <h3 style="text-align: center;" class="faqs-h4"><a target="_self" data-action="url" class="moto-link" href="#">
-                                        How do I dispose of hazardous materials?
+                                    <h3 style="text-align: center;" class="faqs-h4"><a target="_self" data-action="url" class="moto-link" href="/faqs/{{$faq->faqs_group}}">
+                                        {{$faq->question}}
                                     </a>
                                 </h3>
                                 <p style="text-align: center;" class="moto-text_normal">&nbsp;</p>
-                                <p style="text-align: center;" class="moto-text_normal">To check the availability of these services in your area, enter your zip code in the residential service finder.</p>
-                                    </div>
+                                <p style="text-align: center;" class="moto-text_normal">{{$faq->answer}}</p>                                    </div>
 
                             </div>
                             <!-- /product -->
@@ -529,8 +528,8 @@
                     <div class="row">
                         <div class="col-sm-9 text-center">
                             <div class="sr-btn-wrap">
-                                <a href="http://kamleshyadav.com/wp/sunrays/home-one/services/" class="sr-btn sr-lg-btn">
-                                    View All Blogs						</a>
+                                <a href="/FAQs" class="sr-btn sr-lg-btn">
+                                    FAQs					</a>
                             </div>
                         </div>
                         <div class="col-sm-3 align-items-center next-button">

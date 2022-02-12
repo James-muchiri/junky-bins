@@ -23,7 +23,8 @@ class CreateBlogsTable extends Migration
            $table->string('post_blog_id');
            $table->string('comments_count')->default('0');
            $table->string('header_image');          
-            $table->enum('is_hidden', ['yes', 'no'])->default('yes');
+           $table->string('blog_cats');     
+             $table->enum('is_hidden', ['yes', 'no'])->default('yes');
             $table->timestamps();
         });
     }

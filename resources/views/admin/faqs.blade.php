@@ -40,8 +40,13 @@
               <div class="card-body">  
                   <div style="float: right;">
                 <a type="button" onclick="getfaqs({{$faq['id']}})" class="btn btn-primary" data-toggle="modal" data-target="#editfaqs">Edit</a>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-secondary">Hide</button> 
+                <a type="button" onclick="deletefaqs({{$faq['id']}})" class="btn btn-danger">Delete</a>
+                @if ($faq['is_hidden'] == "yes")
+                <a type="button" onclick="showfaqs({{$faq['id']}})" class="btn btn-secondary">show</a> 
+                @else
+                <a type="button" onclick="hidefaqs({{$faq['id']}})" class="btn btn-secondary">Hide</a> 
+                @endif
+               
             </div>
             <br />
             <div>
@@ -82,7 +87,38 @@
                 maxlength="200" placeholder="Type in your message" rows="5"></textarea>
              <span class="pull-right label label-default" id="count_message"></span>
                 </div>
-           
+             
+                <label for="contact-preference">Select the best group that fits the FAQS?</label>
+                
+                <div class="radio" id="faqs_group1">            
+               
+          
+                      <label class="btn btn-default ">
+                        <input type="radio" class="faqs_group" name ="faqs_group" id="faqs_group" value="Gardening"> &nbsp;&nbsp;Gardening
+                      </label>
+
+                      <label class="btn btn-default ">
+                        <input type="radio" class="faqs_group" name ="faqs_group" id="faqs_group" value="Garbage_Collection"> &nbsp;&nbsp;Garbage Collection
+                      </label>
+
+                      <label class="btn btn-default ">
+                        <input type="radio" class="faqs_group" name ="faqs_group" id="faqs_group" value="Land_Scaping"> &nbsp;&nbsp;Land Scaping
+                      </label>
+
+                      <label class="btn btn-default ">
+                        <input type="radio" class="faqs_group" name ="faqs_group" id="faqs_group" value="Clearing"> &nbsp;&nbsp;Clearing and Hedge Cuting
+                      </label>
+
+                      <label class="btn btn-default ">
+                        <input type="radio" class="faqs_group" name ="faqs_group" id="faqs_group" value="Recycling"> &nbsp;&nbsp;Recycling
+                      </label>
+
+                      <label class="btn btn-default ">
+                        <input type="radio" class="faqs_group" name ="faqs_group" id="faqs_group" value="Consultancy"> &nbsp;&nbsp;Consultancy
+                      </label>
+                   
+                                   
+                </div>
         
 
         </div>
@@ -106,8 +142,8 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div id="faqs_saved" style="display:none;">
-                <p id="faqs_message"></p>
+            <div id="faqs_update" style="display:none;">
+                <p id="faqs_update_message"></p>
             </div>
             <form>
             <div class="modal-body editfaqs">

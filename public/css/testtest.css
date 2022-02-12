@@ -174,8 +174,8 @@
 	}
 }
  .cd-content-wrapper {
-	 padding: 3.25em 1.25em;
-	 padding: var(--space-xl) var(--space-md);
+	 padding: 1.25em 1.25em;
+
 }
  @media (min-width: 64rem) {
 	 .cd-content-wrapper h1 {

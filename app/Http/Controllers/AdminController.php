@@ -43,12 +43,49 @@ class AdminController extends Controller
              $faqbyid= FAQS::find($dataId);
            
              return response()->json($faqbyid);
+             
+     
+         }
+         public function deletefaqs($dataId)
+         {
+             $faqbyid= FAQS::find($dataId);
+             $faqbyid->delete();
+           
+             return response('Faqs Updated', 200);
+          
+     
+     
+         }
+         public function showfaqs($dataId)
+         {
+             $faqbyid= FAQS::find($dataId);
+             $faqbyid->is_hidden = "no";
+             $faqbyid->save();
+           
+             return response()->json(['success' => 'Task Log manual entry successfully updated']);
+          
+     
+     
+         }
+         public function hidefaqs($dataId)
+         {
+            $faqbyid= FAQS::find($dataId);
+            $faqbyid->is_hidden = "yes";
+            $faqbyid->save();
+            return response()->json(['success' => 'Task Log manual entry successfully updated']);
           
      
      
          }
 
+         public function previewblogbyid($dataId)
+         {
+             $blog= Blog::find($dataId);
+           
+             return view('admin.preview', compact(['blog' ]));
+             
      
+         }
 
     
 

@@ -50,13 +50,17 @@ Route::get('/', 'UserController@index')->name('index');
 Route::get('/garbage_collection', 'UserController@garbage_collection')->name('garbage');
 Route::get('/recycling', 'UserController@recycling')->name('recycling');
 Route::get('/coming-soon', 'UserController@coming_soon')->name('coming_soon');
+Route::get('/FAQs', 'UserController@FAQS')->name('FAQS');
 Route::get('/blogbyid/{dataId}', 'UserController@blogbyid')->name('blogbyid');
+Route::get('/faqs/{data}', 'UserController@faqs_group');
+
+Route::post('/postcomment', 'UserPostController@postcomment')->name('postcomment');
 
 Route::get('/contact_us', function () {
     return view('user/contactus');
 });
 
-Route::get('/blog', function () {
+Route::get('/blogs', function () {
     return view('user/blog');
 });
 Route::get('/test1', function () {
@@ -65,12 +69,10 @@ Route::get('/test1', function () {
 Route::get('/test', function () {
     return view('user/blogById1');
 });
-Route::get('/FAQS', function () {
-    return view('user/faqs');
-});
-Route::get('/FAQS-group', function () {
-    return view('user/faqsbygroup');
-});
+
+   
+
+
 Route::get('/history', function () {
     return view('user/history');
 });
@@ -91,16 +93,23 @@ Route::post('/upload', 'AdminPostController@upload')->name('upload');
 Route::post('/admin/new_category', 'AdminPostController@new_category')->name('new_category');
 Route::post('/admin/faqs_post', 'AdminPostController@faqs_post')->name('faqs_post');
 Route::post('/admin/faqs_update', 'AdminPostController@faqs_update')->name('faqs_update');
+Route::post('/admin/postcomment', 'AdminPostController@postcomment')->name('postcomment');
 
 
 Route::get('/blogcats', 'AdminPostController@blogcats')->name('blogcats');
-Route::get('/admin/FAQS', 'AdminController@FAQS')->name('FAQS'); 
-Route::get('/admin/getfaqs/{dataId}', 'AdminController@getfaqs')->name('getfaqs');
 Route::get('/post_blog', 'AdminPostController@post_blog1')->name('post_blog');
 Route::get('/discard_blog', 'AdminPostController@discard_blog')->name('discard_blog');
 Route::get('/allblogs', 'AdminPostController@allblogs')->name('allblogs');
+Route::get('/newblog', 'AdminPostController@newblog')->name('newblog');
+Route::get('/admin/FAQS', 'AdminController@FAQS')->name('FAQS'); 
+Route::get('/admin/getfaqs/{dataId}', 'AdminController@getfaqs')->name('getfaqs');
+Route::get('/admin/deletefaqs/{dataId}', 'AdminController@deletefaqs')->name('deletefaqs');
+Route::get('/admin/showfaqs/{dataId}', 'AdminController@showfaqs')->name('showfaqs');
+Route::get('/admin/hidefaqs/{dataId}', 'AdminController@hidefaqs')->name('hidefaqs');
+Route::get('/admin/previewblogbyid/{dataId}', 'AdminController@previewblogbyid')->name('previewblogbyid');
+
 Route::get('/newlead', function () {
     return view('admin/newlead');
 });
-Route::get('/newblog', 'AdminPostController@newblog')->name('newblog');
+
 Route::get('/admin', 'AdminController@admin')->name('admin'); 

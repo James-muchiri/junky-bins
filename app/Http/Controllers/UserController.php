@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 use App\Categories;
 use App\Orders;
 use App\Blog;
+use App\Blog_Categories;
+use App\Blog_comments;
+use App\Blog_comments_reply;
+use App\FAQS;
 use App\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -13,11 +17,12 @@ class UserController extends Controller
     public function index()
     {
         $blogs = Blog::all();
+        $faqs = FAQS::all();
         $categories = Categories::where('is_hidden','=','no')->get();
         $product = products::all()->where('is_hidden','=','no')->groupBy('category');
         $products = products:: where('is_hidden','=','no')->get();
         $newproducts = products:: where('is_hidden','=','no')->orderBy('created_at', 'DESC')->get();
-        return view('user.index', compact(['blogs', 'categories', 'products', 'product', 'newproducts' ]));
+        return view('user.index', compact(['blogs', 'categories', 'products', 'product', 'newproducts', 'faqs' ]));
 
 
 
@@ -38,24 +43,37 @@ class UserController extends Controller
 
         return view('user.coming-soon');
     }
+    public function postcomment(Request $request)
+    {
+        $blog_comment = new Blog_comments;
+        $blog_comment->name = $request->name;
+        $blog_comment->email = $request->email;
+        $blog_comment->website = $request->website;
+        $blog_comment->message = $request->message;
+        $blog_comment->blog_id = $request->blog_id;
+        $blog_comment->save();
+        return response()->json(['success' => 'comment add successfully']);
 
+
+    }
 
     public function blogbyid($dataId){
 
          $blog = Blog::where('id', $dataId)->first();
-  
-      return view('user.blogById', compact(['blog']));
+         $blog_comments = Blog_comments::where('blog_id', $dataId)->get();     
+         
+      return view('user.blogById', compact(['blog', 'blog_comments']));
     }
 
-    public function index11()
+    public function FAQS()
     {
-        $categories = Categories::where('is_hidden','=','no')->get();
-        $product = products::all()->where('is_hidden','=','no')->groupBy('category');
-        $products = products:: where('is_hidden','=','no')->get();
-        $newproducts = products:: where('is_hidden','=','no')->orderBy('created_at', 'DESC')->get();
-        return view('index', compact(['categories', 'products', 'product', 'newproducts' ]));
+        return view('user/faqs');
 
+    }
+    public function faqs_group($data){
+        $faqs = FAQS::where('faqs_group', $data)->get();
 
+   return view('user.faqsbygroup', compact(['faqs']));
 
     }
 
