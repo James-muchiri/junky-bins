@@ -78,6 +78,13 @@
                 </ul>
                 </nav>
 
+                <div class="header-one__right">
+                    <a href="contact.html">
+                        <i class="wastey-icon-9"></i>
+                        Request pickup
+                    </a>
+                </div>
+
                                 </div>
 
 

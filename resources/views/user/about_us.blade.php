@@ -13,7 +13,7 @@
             </a>
                     </li>
 
-                    <li class="active">Contact Us</li>
+                    <li class="active">About Us</li>
                 </ol>
             </div>
         </div>
@@ -130,6 +130,68 @@
 </div>
 
 
+<div class="sr-blog-wrapper top-spacer bottom-spacer">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                <div class="sr-section-title">
+                                        <span class="sr-sub-title">
+                        <span>
+                            Our Core Values				</span>
+                    </span>
+                                        <h4 class="sr-colored-heading">Read more about ouur core values</h4>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row topmargin_40 columns_margin_top_60">
+            <div class="col-md-4">
+                <div class="teaser with_border rounded text-center">
+                    <div class="teaser_icon main_bg_color2 round size_small offset_icon">
+                        <i class="fa fa-leaf"></i>
+                    </div>
+                    <h4 class="poppins hover-color2">
+                        <a href="#">Corporate Services</a>
+                    </h4>
+                    <p>
+            Guaranteed that all of your universal waste management is performed safely and responsibly.
+        </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="teaser with_border rounded text-center">
+                    <div class="teaser_icon main_bg_color3 round size_small offset_icon">
+                        <i class="fa fa-inbox"></i>
+                    </div>
+                    <h4 class="poppins hover-color3">
+                        <a href="#">Convenient Pickup</a>
+                    </h4>
+                    <p>
+            We offer business pickup services to safely recycle your electronics in a safe manner.
+        </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="teaser with_border rounded text-center">
+                    <div class="teaser_icon main_bg_color round size_small offset_icon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <h4 class="poppins">
+                        <a href="#">E-waste Events</a>
+                    </h4>
+                    <p>
+            We work with non-profits, businesses, and other organizations to host community e-waste events.
+        </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="{{ asset('js/vendor/jquery-3.2.1.min.js') }}"></script>
