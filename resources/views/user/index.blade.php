@@ -1,6 +1,6 @@
 @extends('user.includes.index')
 @section('content')
-    
+
 
 <style>
 
@@ -35,7 +35,7 @@
 
         <body>
 
-     
+
         <div class="container-fluid carosel">
             <div class="owl-carousel owl-theme">
                 <div class="item">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                      </div>
-                </div>                    
+                </div>
                 <div class="item">
                     <img src="https://cdn.pixabay.com/photo/2017/10/17/19/11/fantasy-2861815_960_720.jpg" alt="">
                     <div class="cover">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                      </div>
-                </div>                
+                </div>
                 <div class="item">
                     <img src="https://cdn.pixabay.com/photo/2017/07/17/23/51/wormhole-2514312_960_720.jpg" alt="">
                     <div class="cover">
@@ -114,64 +114,16 @@
                                 </div>
                                                             <h4>Garbage Collection</h4>
                                 <p>We have regular garbage collection schedules for our clients ranging from Residential to Corporates. We ensure Timely, Efficient and Effective Services.</p>
-                                <a href="https://kamleshyadav.com/wp/sunrays/home-one/about-us/" class="sr-read-more-link">
+                                <a href="/garbage_collection" class="sr-read-more-link">
                                     Read More
                                 <span class="sr-arrow"></span>
                                 </a>
                                                         </div>
                         </div>
                     </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 colored">
-                        <div class="sr-service-section">
-                            <div class="sr-service-inner">
-                                                            <div class="sr-service-icon">
-                                    <span>
-                                        <img src="https://kamleshyadav.com/wp/sunrays/home-one/wp-content/uploads/sites/2/2020/11/Solar-Water-Heater-1.svg" alt="Solar Water Heater">
-                                    </span>
-                                </div>
-                                                            <h4>Gardening</h4>
-                                <p>We develop ideas and turn them into beautiful gardens. From lawn mowing to flowerbeds, we implement beautiful gardens to give your outdoor space a serene feel.</p>
-                                <a href="https://kamleshyadav.com/wp/sunrays/home-one/about-us/" class="sr-read-more-link">
-                                    Read More
-                                <span class="sr-arrow"></span>
-                                </a>
-                                                        </div>
-                        </div>
-                    </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 colored">
-                        <div class="sr-service-section">
-                            <div class="sr-service-inner">
-                                                            <div class="sr-service-icon">
-                                    <span>
-                                        <img src="https://kamleshyadav.com/wp/sunrays/home-one/wp-content/uploads/sites/2/2020/11/Solar-Wind-1.svg" alt="Solar Wind">
-                                    </span>
-                                </div>
-                                                            <h4>Landscaping</h4>
-                                <p>We provide professional landscaping services to help visualize your dream outdoor space and turn it into reality. We create landscaping concepts for your compound and handle the projects from ideation to completion.</p>
-                                <a href="https://kamleshyadav.com/wp/sunrays/home-one/about-us/" class="sr-read-more-link">
-                                    Read More
-                                <span class="sr-arrow"></span>
-                                </a>
-                                                        </div>
-                        </div>
-                    </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 colored">
-                        <div class="sr-service-section">
-                            <div class="sr-service-inner">
-                                                            <div class="sr-service-icon">
-                                    <span>
-                                        <img src="https://kamleshyadav.com/wp/sunrays/home-one/wp-content/uploads/sites/2/2020/11/Plantation-1.svg" alt="Plantation">
-                                    </span>
-                                </div>
-                                                            <h4>Clearing Hedge Cutting</h4>
-                                <p>We cut and clear growing bushes and shrubs to maintain your compound. We understand the importance of maintenance and we therefore do this on regular intervals.</p>
-                                <a href="https://kamleshyadav.com/wp/sunrays/home-one/about-us/" class="sr-read-more-link">
-                                    Read More
-                                <span class="sr-arrow"></span>
-                                </a>
-                                                        </div>
-                        </div>
-                    </div>
+                         
+                   
+                      
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 colored">
                         <div class="sr-service-section">
                             <div class="sr-service-inner">
@@ -182,8 +134,8 @@
                                 </div>
                                                             <h4>Recycling</h4>
                                 <p>The garbage collected is converted into various resources after sorting and separation. We recycle organic waste into Poultry, pig and Fish feeds. From the residue we produce Organic manure and Fertilizer.
-                                    We partner with other stake holders for the inorganic waste for purposes of recycling.</p>
-                                <a href="https://kamleshyadav.com/wp/sunrays/home-one/about-us/" class="sr-read-more-link">
+                                   .</p>
+                                <a href="/recycling/" class="sr-read-more-link">
                                     Read More
                                 <span class="sr-arrow"></span>
                                 </a>
@@ -198,10 +150,10 @@
                                         <img src="https://kamleshyadav.com/wp/sunrays/home-one/wp-content/uploads/sites/2/2020/11/Reduced-Costs-1-1.svg" alt="Reduced Costs">
                                     </span>
                                 </div>
-                                                            <h4>Consoltancy</h4>
+                                                            <h4>Consultancy</h4>
                                 <p>We at Junky Bins guide enterprises in implementing recycling initiatives, negotiate garbage hauling contracts, review past invoices for billing errors, obtain credits for overcharges, and assist with resolving all service issues that relate to Solid Waste Management and recycling.
                                    </p>
-                                <a href="https://kamleshyadav.com/wp/sunrays/home-one/about-us/" class="sr-read-more-link">
+                                <a href="/consultancy" class="sr-read-more-link">
                                     Read More
                                 <span class="sr-arrow"></span>
                                 </a>
@@ -210,7 +162,7 @@
                     </div>
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                         <div class="sr-btn-wrap">
-                            <a href="http://kamleshyadav.com/wp/sunrays/home-one/services/" class="sr-btn sr-lg-btn">
+                            <a href="/our_services" class="sr-btn sr-lg-btn">
                                 View All Services						</a>
                         </div>
                     </div>
@@ -382,6 +334,12 @@
                                     Junky Bins Company Limited is an independent Private Limited company that specializes in waste collection, transportation and disposal from both residential as well as corporate clients.
                             </div></div>
                     </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                        <div class="sr-btn-wrap">
+                            <a href="/our_services" class="sr-btn sr-lg-btn">
+                                More about Our Team						</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -460,8 +418,8 @@
                                 </div>
                             </div>
                     @endforeach
-                                    
-                 
+
+
                     </div>
                     <div class="row">
                         <div class="col-sm-9 text-center">
@@ -472,13 +430,13 @@
                         </div>
                         <div class="col-sm-3 align-items-center next-button">
                             <div id="slick-nav-2" class="products-slick-nav"></div>
-    
+
                         </div>
                     </div>
-                 
-                    
+
+
             </div>
-   
+
         </div>
 
         <div class="container-fluid" style="background-color: #f1f6f9;">
@@ -534,7 +492,7 @@
                         </div>
                         <div class="col-sm-3 align-items-center next-button">
                             <div id="slick-nav-1" class="products-slick-nav"></div>
-    
+
                         </div>
                     </div>
 

@@ -204,59 +204,34 @@ class AdminController extends Controller
         $categories = Categories::where('is_hidden', 'no')->get();
         $products = Products::all();
         return view('products', compact(['categories', 'products' ]));
-
-
     }
-    public function pendingorders()
+    
+    public function newlead()
     {
-        $orders = Orders::where('status', 'pending')->orderBy('created_at', 'DESC')->get();
-
-        return view('pending_orders', compact(['orders']));
-
+        return view('admin/newlead');
 
     }
-    public function pendingdeliveries()
+    public function Contacts()
     {
-        $orders = Orders::where('delivery_status', 'no')->orderBy('created_at', 'DESC')->get();
-
-        return view('pending_deliveries', compact(['orders']));
-
+        return view('admin/contacts');
 
     }
-    public function completeorders()
+    public function addressbook()
     {
-        $orders = Orders::where('delivery_status', 'yes')->orderBy('created_at', 'DESC')->get();
-
-        return view('completeorders', compact(['orders']));
-
+        return view('admin/addressbook');
 
     }
-    public function hidden_products()
+    public function compose()
     {
-        $categories = Categories::all();
-              $products=  Products::where('is_hidden', 'yes')->orderBy('created_at', 'DESC')->get();
-        return view('hiddenproducts', compact(['categories', 'products' ]));
-
+        return view('admin/composemessage');
 
     }
+    
 
-    public function post_category(Request $request)
-    {
+  
+ 
 
-        $request->validate([
-            'name'=>'required',
-
-        ]);
-
-
-
-        $contact = new Categories([
-            'name' => $request->get('name'),
-                    ]);
-        $contact->save();
-        return redirect('/categories')->with('success', 'Category saved!');
-
-    }
+    
 
 
 

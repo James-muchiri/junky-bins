@@ -22,7 +22,7 @@
                 <!-- Start Single Service -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center">
                     <div class="service ">
-                        <a href="/FAQS-group">
+                        <a href="/FAQS-group/General">
                             <i class="fa fa-gears" style="font-size:36px"></i>
                             <p>General</p>
                         </a>
@@ -32,7 +32,7 @@
                 <!-- Start Single Service -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 xs__mt--40">
                     <div class="service">
-                      <a href="/FAQS-group">
+                      <a href="/FAQS-group/Recycling">
                        
                         <i class="fa fa-trash-o" style="font-size:36px"></i>
                             <p>Recycling</p>
@@ -43,7 +43,7 @@
                 <!-- Start Single Service -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 md__mt--40 sm__mt--40">
                     <div class="service">
-              <a href="/FAQS-group">
+              <a href="/FAQS-group/Garbage_Collection">
                        
                 <i class="fa fa-gears" style="font-size:36px"></i>
                             <p>
@@ -58,7 +58,7 @@
                 <!-- Start Single Service -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 text-center">
                     <div class="service">
-                <a href="/FAQS-group">
+                <a href="/FAQS-group/Gardening">
                        
                     <i class="fa fa-trash-o" style="font-size:36px"></i>
                             <p>Gardening</p>
@@ -69,7 +69,7 @@
                 <!-- Start Single Service -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 xs__mt--40">
                     <div class="service">
-                   <a href="/FAQS-group">
+                   <a href="/FAQS-group/Gardening">
                           
                     <i class="fa fa-trash-o" style="font-size:36px"></i>
                     <p>Gardening</p>
@@ -80,7 +80,7 @@
                 <!-- Start Single Service -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12 md__mt--40 sm__mt--40">
                     <div class="service">
-            <a href="/FAQS-group">
+            <a href="/FAQS-group/Other">
                   
                 <i class="fa fa-trash-o" style="font-size:36px"></i>
                             <p>Other</p>

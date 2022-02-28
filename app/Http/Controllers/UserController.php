@@ -37,6 +37,16 @@ class UserController extends Controller
 
         return view('user.recycling');
     }
+    public function consultancy()
+    {
+
+        return view('user.consultancy');
+    }
+    public function our_services()
+    {
+
+        return view('user.ourservices');
+    }
 
     public function coming_soon()
     {
@@ -60,8 +70,8 @@ class UserController extends Controller
     public function blogbyid($dataId){
 
          $blog = Blog::where('id', $dataId)->first();
-         $blog_comments = Blog_comments::where('blog_id', $dataId)->get();     
-         
+         $blog_comments = Blog_comments::where('blog_id', $dataId)->get();
+
       return view('user.blogById', compact(['blog', 'blog_comments']));
     }
 
@@ -73,7 +83,14 @@ class UserController extends Controller
     public function faqs_group($data){
         $faqs = FAQS::where('faqs_group', $data)->get();
 
-   return view('user.faqsbygroup', compact(['faqs']));
+   return view('user.faqsbygroup', compact(['faqs', 'data']));
+
+    }
+
+    public function pricing()
+    {
+
+      return view('user.pricing');
 
     }
 

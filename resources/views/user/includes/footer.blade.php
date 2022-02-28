@@ -1,4 +1,12 @@
 
+<div class="btn_floater btn_floater-group btn_floater-group-0-0-1">
+    <a href="tel:+254722 206 260 " class="btn_floater-button btn_floater-button-0-0-3">
+        <i class="fa fa-phone btn_floater-icon-0-0-4"></i>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=254722206260 " class="btn_floater-button btn_floater-button-0-0-10">
+        <i class="fa fa-whatsapp btn_floater-icon-0-0-11"></i>
+    </a>
+</div>
 <footer class="sr-footer-wrapper sr-demo-footer sr-dark-footer">
 
     <div class="sr-bottom-wrapper">

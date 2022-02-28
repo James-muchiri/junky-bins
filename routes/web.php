@@ -49,16 +49,16 @@ Route::get('/view-clear', function() {
 Route::get('/', 'UserController@index')->name('index');
 Route::get('/garbage_collection', 'UserController@garbage_collection')->name('garbage');
 Route::get('/recycling', 'UserController@recycling')->name('recycling');
+Route::get('/consultancy', 'UserController@consultancy')->name('consultancy');
 Route::get('/coming-soon', 'UserController@coming_soon')->name('coming_soon');
 Route::get('/FAQs', 'UserController@FAQS')->name('FAQS');
 Route::get('/blogbyid/{dataId}', 'UserController@blogbyid')->name('blogbyid');
-Route::get('/faqs/{data}', 'UserController@faqs_group');
+Route::get('/FAQS-group/{data}', 'UserController@faqs_group');
+Route::get('/pricing', 'UserController@pricing');
+Route::get('/our_services', 'UserController@our_services');
 
 Route::post('/postcomment', 'UserPostController@postcomment')->name('postcomment');
 
-Route::get('/contact_us', function () {
-    return view('user/contactus');
-});
 
 Route::get('/blogs', function () {
     return view('user/blog');
@@ -70,7 +70,7 @@ Route::get('/test', function () {
     return view('user/blogById1');
 });
 
-   
+
 
 
 Route::get('/history', function () {
@@ -78,6 +78,9 @@ Route::get('/history', function () {
 });
 Route::get('/contact_us', function () {
     return view('user/contact_us');
+});
+Route::get('/About_us', function () {
+    return view('user/about_us');
 });
 
 
@@ -101,7 +104,11 @@ Route::get('/post_blog', 'AdminPostController@post_blog1')->name('post_blog');
 Route::get('/discard_blog', 'AdminPostController@discard_blog')->name('discard_blog');
 Route::get('/allblogs', 'AdminPostController@allblogs')->name('allblogs');
 Route::get('/newblog', 'AdminPostController@newblog')->name('newblog');
-Route::get('/admin/FAQS', 'AdminController@FAQS')->name('FAQS'); 
+Route::get('/admin/FAQS', 'AdminController@FAQS')->name('FAQS');
+Route::get('/admin/newlead', 'AdminController@newlead')->name('newlead');
+Route::get('/compose', 'AdminController@compose')->name('sms');
+Route::get('/addressbook', 'AdminController@addressbook')->name('addressbook');
+Route::get('/Contacts', 'AdminController@Contacts')->name('Contacts');
 Route::get('/admin/getfaqs/{dataId}', 'AdminController@getfaqs')->name('getfaqs');
 Route::get('/admin/deletefaqs/{dataId}', 'AdminController@deletefaqs')->name('deletefaqs');
 Route::get('/admin/showfaqs/{dataId}', 'AdminController@showfaqs')->name('showfaqs');
@@ -112,4 +119,4 @@ Route::get('/newlead', function () {
     return view('admin/newlead');
 });
 
-Route::get('/admin', 'AdminController@admin')->name('admin'); 
+Route::get('/admin', 'AdminController@admin')->name('admin');

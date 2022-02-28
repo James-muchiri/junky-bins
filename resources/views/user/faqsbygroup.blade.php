@@ -32,6 +32,12 @@
 
   
     <div class="panel-group" id="accordion">
+        @if ($faqs->count()<1)
+        <p> no Faqs Questions addded for {{$data}}</p>
+            
+        @else
+            
+        @endif
       @foreach ( $faqs as $faq)
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -41,41 +47,15 @@
           </a>
         </h4>
       </div>
-      <div id="collapseOne" class="panel-collapse collapse in">
+      <div id="collapseOne" class="panel-collapse collapse ">
         <div class="panel-body">
           {{$faq->answer}}
         </div>
       </div>
     </div>
     @endforeach
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-            How do I dispose of hazardous materials?
-          </a>
-        </h4>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse">
-        <div class="panel-body">
-            To check the availability of these services in your area, enter your zip code in the residential service finder.
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-            How do I dispose of hazardous materials?
-          </a>
-        </h4>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse">
-        <div class="panel-body">
-            To check the availability of these services in your area, enter your zip code in the residential service finder.
-        </div>
-      </div>
-    </div>
+ 
+   
   </div>
     
     
