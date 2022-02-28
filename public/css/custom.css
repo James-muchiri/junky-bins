@@ -4847,16 +4847,7 @@ padding: 10px 30px;
     opacity: 0.8;
 }
 
-.parallax:before, .parallax:after  {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-}
+
 .parallax {
     background-attachment: fixed;
     background-position: 50% 0;
