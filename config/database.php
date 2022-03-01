@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$url = 'mysql://be216faffa251a:06ffad9e@us-cdbr-east-05.cleardb.net/heroku_954e21c8923cda4?reconnect=true';
 $host = $url["host"] ?? null;
 $username = $url["user"] ?? null;
 $password = $url["pass"] ?? null;
@@ -50,7 +50,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => $url,
+            'url' => 'mysql://be216faffa251a:06ffad9e@us-cdbr-east-05.cleardb.net/heroku_954e21c8923cda4?reconnect=true',
             'host' => $host,
             'port' => env('DB_PORT', '3306'),
             'database' => $database,
