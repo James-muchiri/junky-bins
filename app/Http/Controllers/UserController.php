@@ -18,11 +18,11 @@ class UserController extends Controller
     {
         $blogs = Blog::all();
         $faqs = FAQS::all();
-        $categories = Categories::where('is_hidden','=','no')->get();
-        $product = products::all()->where('is_hidden','=','no')->groupBy('category');
-        $products = products:: where('is_hidden','=','no')->get();
-        $newproducts = products:: where('is_hidden','=','no')->orderBy('created_at', 'DESC')->get();
-        return view('user.index', compact(['blogs', 'categories', 'products', 'product', 'newproducts', 'faqs' ]));
+      //  $categories = Categories::where('is_hidden','=','no')->get();
+      //  $product = products::all()->where('is_hidden','=','no')->groupBy('category');
+    //    $products = products:: where('is_hidden','=','no')->get();
+       // $newproducts = products:: where('is_hidden','=','no')->orderBy('created_at', 'DESC')->get();
+        return view('user.index', compact(['blogs', 'faqs']));
 
 
 
