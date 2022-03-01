@@ -38,8 +38,9 @@
    <!-- Custom stlylesheet -->
 
    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
-
+@production
    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+   @endproduction
    <link rel="stylesheet" href="{{ asset('css/plugins/toastr/toastr.min.css') }}">
 
       <!-- Slick -->
